@@ -23,6 +23,7 @@ jobs:
             mingw-w64-x86_64-gcc
             mingw-w64-x86_64-glfw
             mingw-w64-x86_64-pkgconf
+            mingw-w64-x86_64-SDL2
       - shell: msys2 {0}
         run: |
           pwd
