@@ -1,4 +1,9 @@
 # ImGui Knobs
+
+
+![alt](https://github.com/dinau/cimgui-knobs/actions/workflows/windows.yml/badge.svg)
+![alt](https://github.com/dinau/cimgui-knobs/actions/workflows/linux.yml/badge.svg) 
+
 This is a port/adaptation of [imgui-rs-knobs](https://github.com/DGriffin91/imgui-rs-knobs), for C++.
 
 ![image](https://user-images.githubusercontent.com/956928/164050142-96a8dde4-7d2e-43e4-9afe-14ab48eac243.png)
