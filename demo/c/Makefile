@@ -28,7 +28,7 @@ BUILD_DIR = .build
 
 VPATH = $(IM_KNOBS_DIR): $(CIM_KNOBS_DIR) : $(CIMGUI_DIR): $(IMGUI_DIR) : $(UTILS_DIR) : $(IMGUI_DIR)/backends
 
-CSOURCES = main.c setupFonts.c utils.c
+CSOURCES = main.c setupFonts.c utils.c appImGui.c
 SOURCES += imgui_impl_glfw.cpp \
            imgui_impl_opengl3.cpp \
 					 cimgui.cpp

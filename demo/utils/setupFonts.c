@@ -8,7 +8,7 @@
 #include "utils.h"
 #include "setupFonts.h"
 
-#define ImGui_GetIO igGetIO
+#define ImGui_GetIO igGetIO_Nil
 
 #define MAX_PATH  2048
 const char* IconFontPath = "../utils/fonticon/fa6/fa-solid-900.ttf";
@@ -27,7 +27,7 @@ char LinuxFontNameTbl[][MAX_PATH] = { // For Linux Mint 22 (Ubuntu/Debian family
                            };
 
 /*-----------------
- * getWinFontPath()
+ * getFontPath()
  *----------------*/
 char* getWinFontPath(char* sBuf, int bufSize, const char* fontName) {
   char* sWinDir = getenv("windir");
@@ -58,7 +58,7 @@ void setupFonts(void) {
     if (existsFile(fontPath)) {
       font = ImFontAtlas_AddFontFromFileTTF(pio->Fonts, fontPath, point2px(14.5)
           , config
-          , ImFontAtlas_GetGlyphRangesJapanese(pio->Fonts));
+          , NULL);
       printf("Found FontPath: [%s]\n",fontPath);
       break;
     }
@@ -69,7 +69,7 @@ void setupFonts(void) {
     if (existsFile(fontPath)) {
       font = ImFontAtlas_AddFontFromFileTTF(pio->Fonts, fontPath, point2px(13)
           , config
-          , ImFontAtlas_GetGlyphRangesJapanese(pio->Fonts));
+          , NULL);
       printf("Found FontPath: [%s]\n",fontPath);
       break;
     }
@@ -79,7 +79,7 @@ void setupFonts(void) {
     printf("Default has been set.\n");
     ImFontAtlas_AddFontDefault(pio->Fonts, NULL);
   }
-  // Merge IconFont
+  // Merge Icon font
   config->MergeMode = true;
   ImFontAtlas_AddFontFromFileTTF(pio->Fonts, IconFontPath, point2px(11), config , ranges_icon_fonts);
 }
